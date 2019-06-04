@@ -25,7 +25,8 @@ data class OmdbResponse (
     val boxOffice : String,
     val production : String,
     val website : String,
-    val response : Boolean
+    val response : Boolean,
+    val error : String
 )
 
 data class Ratings (
