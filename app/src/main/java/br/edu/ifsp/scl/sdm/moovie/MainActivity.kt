@@ -2,10 +2,12 @@ package br.edu.ifsp.scl.sdm.moovie
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
+import br.edu.ifsp.scl.sdm.moovie.BuscaTituloFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import java.util.*
@@ -36,15 +38,15 @@ class MainActivity: AppCompatActivity() {
         menuNavigationView.setNavigationItemSelectedListener { onNavigationItemSelected(it) }
     }
 
-    fun onNavigationItemSelected(it: MenuItem): Boolean {
+    fun onNavigationItemSelected(item: MenuItem): Boolean {
         var retorno: Boolean = false
-        when(it.itemId) {
+        when(item.itemId){
             R.id.modoTextoMenuItem -> {
-                //TODO()
+                substituiFragment("id")
                 retorno = true
             }
             R.id.modoGraficoMenuItem -> {
-                TODO()
+                substituiFragment("title")
                 retorno = true
             }
             R.id.sairMenuItem -> {
@@ -54,6 +56,15 @@ class MainActivity: AppCompatActivity() {
         }
         menuLateralDrawerLayout.closeDrawer(GravityCompat.START)
         return retorno
+    }
+
+    private fun substituiFragment(modo: String){
+        val modoBuscaFragment = if(modo == "id") BuscaIdFragment() else BuscaTituloFragment()
+
+        // Transaction para substituição de fragment
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentAtivo,  modoBuscaFragment)
+        fragmentTransaction.commit()
     }
 
     override fun onBackPressed() {
