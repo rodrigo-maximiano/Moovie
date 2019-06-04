@@ -1,4 +1,4 @@
-package br.edu.ifsp.scl.sdm.dicesdm
+package br.edu.ifsp.scl.sdm.moovie
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -6,10 +6,8 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
-import br.edu.ifsp.scl.sdm.moovie.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
-import org.jetbrains.anko.startActivity
 import java.util.*
 
 class MainActivity: AppCompatActivity() {
