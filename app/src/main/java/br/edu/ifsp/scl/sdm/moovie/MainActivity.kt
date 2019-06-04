@@ -2,12 +2,10 @@ package br.edu.ifsp.scl.sdm.moovie
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
-import br.edu.ifsp.scl.sdm.moovie.BuscaTituloFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import java.util.*
@@ -19,7 +17,7 @@ class MainActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.frame_main)
+        setContentView(R.layout.activity_main)
 
         setSupportActionBar(toolbar)
         supportActionBar?.title = resources.getString(R.string.app_name)

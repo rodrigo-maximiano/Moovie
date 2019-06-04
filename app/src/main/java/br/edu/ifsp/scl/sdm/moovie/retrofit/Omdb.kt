@@ -5,7 +5,9 @@ import br.edu.ifsp.scl.sdm.moovie.Constantes.URL_BASE
 import br.edu.ifsp.scl.sdm.moovie.MainActivity
 import br.edu.ifsp.scl.sdm.moovie.model.OmdbResponse
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.frame_main.*
 import okhttp3.ResponseBody
+import org.jetbrains.anko.design.snackbar
 import org.json.JSONException
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,7 +27,7 @@ class Omdb(val mainActivity: MainActivity) {
             object : Callback<ResponseBody> {
                 // Função chamada no caso de erro
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                    mainActivity.mainLl.snackbar("Erro na resposta - Retrofit")
+                    mainActivity.fragmentAtivo.snackbar("Erro na resposta - Retrofit")
                 }
                 // Função chamada no caso de resposta
                 override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
@@ -38,7 +40,7 @@ class Omdb(val mainActivity: MainActivity) {
                         mainActivity.tradutoHandler.obtainMessage(
                             MainActivity.codigosMensagen.RESPOSTA_TRADUCAO, resposta).sendToTarget()
                     } catch (jse: JSONException) {
-                        mainActivity.mainLl.snackbar("Erro na resposta - Retrofit")
+                        mainActivity.fragmentAtivo.snackbar("Erro na resposta - Retrofit")
                     }
                 }
             }
@@ -50,7 +52,7 @@ class Omdb(val mainActivity: MainActivity) {
             object : Callback<ResponseBody> {
                 // Função chamada no caso de erro
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                    mainActivity.mainLl.snackbar("Erro na resposta - Retrofit")
+                    mainActivity.fragmentAtivo.snackbar("Erro na resposta - Retrofit")
                 }
                 // Função chamada no caso de resposta
                 override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
@@ -63,7 +65,7 @@ class Omdb(val mainActivity: MainActivity) {
                         mainActivity.tradutoHandler.obtainMessage(
                             MainActivity.codigosMensagen.RESPOSTA_TRADUCAO, resposta).sendToTarget()
                     } catch (jse: JSONException) {
-                        mainActivity.mainLl.snackbar("Erro na resposta - Retrofit")
+                        mainActivity.fragmentAtivo.snackbar("Erro na resposta - Retrofit")
                     }
                 }
             }
