@@ -31,17 +31,7 @@ class Omdb(val mainActivity: MainActivity) {
                 }
                 // Função chamada no caso de resposta
                 override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                    try {
-                        // Cria um objeto Gson que consegue fazer reflexão de um Json para Data Class
-                        val gson: Gson = Gson()
-                        // Reflete a resposta (que é um Json) num objeto da classe Resposta
-                        val resposta: OmdbResponse = gson.fromJson(response.body()?.string(), OmdbResponse::class.java)
-                        // Enviando as tradução ao Handler da thread de UI para serem mostrados na tela
-                        mainActivity.tradutoHandler.obtainMessage(
-                            MainActivity.codigosMensagen.RESPOSTA_TRADUCAO, resposta).sendToTarget()
-                    } catch (jse: JSONException) {
-                        mainActivity.fragmentAtivo.snackbar("Erro na resposta - Retrofit")
-                    }
+                    trataResponse(response)
                 }
             }
         )
@@ -54,22 +44,26 @@ class Omdb(val mainActivity: MainActivity) {
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                     mainActivity.fragmentAtivo.snackbar("Erro na resposta - Retrofit")
                 }
+
                 // Função chamada no caso de resposta
                 override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                    try {
-                        // Cria um objeto Gson que consegue fazer reflexão de um Json para Data Class
-                        val gson: Gson = Gson()
-                        // Reflete a resposta (que é um Json) num objeto da classe Resposta
-                        val resposta: OmdbResponse = gson.fromJson(response.body()?.string(), OmdbResponse::class.java)
-                        // Enviando as tradução ao Handler da thread de UI para serem mostrados na tela
-                        mainActivity.tradutoHandler.obtainMessage(
-                            MainActivity.codigosMensagen.RESPOSTA_TRADUCAO, resposta).sendToTarget()
-                    } catch (jse: JSONException) {
-                        mainActivity.fragmentAtivo.snackbar("Erro na resposta - Retrofit")
-                    }
+                    trataResponse(response)
                 }
             }
         )
+    }
+
+    private fun trataResponse(response: Response<ResponseBody>) {
+        try {
+            // Cria um objeto Gson que consegue fazer reflexão de um Json para Data Class
+            val gson: Gson = Gson()
+            // Reflete a resposta (que é um Json) num objeto da classe Resposta
+            val resposta: OmdbResponse = gson.fromJson(response.body()?.string(), OmdbResponse::class.java)
+            // Enviando as tradução ao Handler da thread de UI para serem mostrados na tela
+            mainActivity.messageHandler.obtainMessage(0, resposta).sendToTarget()
+        } catch (jse: JSONException) {
+            mainActivity.fragmentAtivo.snackbar("Erro na resposta - Retrofit")
+        }
     }
 
 }
