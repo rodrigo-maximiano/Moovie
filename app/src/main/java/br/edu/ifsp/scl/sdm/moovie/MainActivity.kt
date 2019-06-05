@@ -57,7 +57,7 @@ class MainActivity: AppCompatActivity() {
     }
 
     private fun substituiFragment(modo: String){
-        val modoBuscaFragment = if(modo == "id") BuscaIdFragment() else BuscaTituloFragment()
+        val modoBuscaFragment = if(modo == "id") BuscaTituloFragment() else BuscaIdFragment()
 
         // Transaction para substituição de fragment
         val fragmentTransaction = supportFragmentManager.beginTransaction()
