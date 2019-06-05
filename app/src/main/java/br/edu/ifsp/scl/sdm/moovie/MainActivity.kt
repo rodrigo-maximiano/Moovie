@@ -39,11 +39,11 @@ class MainActivity: AppCompatActivity() {
     fun onNavigationItemSelected(item: MenuItem): Boolean {
         var retorno: Boolean = false
         when(item.itemId){
-            R.id.modoTextoMenuItem -> {
+            R.id.buscaIdMenuItem -> {
                 substituiFragment("id")
                 retorno = true
             }
-            R.id.modoGraficoMenuItem -> {
+            R.id.buscaTituloMenuItem -> {
                 substituiFragment("title")
                 retorno = true
             }
