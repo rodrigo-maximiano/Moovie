@@ -3,4 +3,16 @@
     <string name="menu_aberto">Menu aberto</string>
     <string name="menu_fechado">Menu fechado</string>
     <string name="poster_do_filme">Poster do filme</string>
+    <string name="titulo">Título:</string>
+    <string name="ano">Ano:</string>
+    <string name="lancamento">Lançamento:</string>
+    <string name="diretor">Diretor:</string>
+    <string name="atores">Atores:</string>
+    <string name="idioma">Idioma:</string>
+    <string name="pais">País:</string>
+    <string name="nota_imdb">Nota IMDB:</string>
+    <string name="tipo">Tipo:</string>
+    <string name="produtora">Produtora:</string>
+    <string name="website">Website:</string>
+    <string name="notas_de_avaliacao">Notas de avaliação</string>
 </resources>
