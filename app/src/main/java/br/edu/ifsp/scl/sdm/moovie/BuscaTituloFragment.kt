@@ -1,5 +1,6 @@
 package br.edu.ifsp.scl.sdm.moovie
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,8 +23,13 @@ class BuscaTituloFragment: ModoBuscaFragment(){
     }
 
     override fun buscarFilme(view: View) {
-        val omdb = Omdb(MainActivity())
+        val omdb = Omdb(mainActivity!!)
         omdb.getMovieByTitle(edtTituloFilme.text.toString())
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        mainActivity = context as MainActivity
     }
 
 }

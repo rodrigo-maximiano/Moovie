@@ -6,6 +6,8 @@ import java.util.*
 
 abstract class ModoBuscaFragment: Fragment  (){
 
+    var mainActivity: MainActivity? = null
+
     // Metodo abstrato para jogar o dado
     abstract fun buscarFilme(view: View)
 

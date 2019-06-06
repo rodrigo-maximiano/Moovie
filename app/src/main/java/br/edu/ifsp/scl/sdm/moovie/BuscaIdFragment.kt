@@ -11,8 +11,6 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class BuscaIdFragment: ModoBuscaFragment() {
 
-    val mainActivity: MainActivity = null
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val layoutFragment = inflater.inflate(R.layout.fragment_buscar_id, null)
         activity?.toolbar?.subtitle = "Busca por Id"
@@ -25,12 +23,13 @@ class BuscaIdFragment: ModoBuscaFragment() {
     }
 
     override fun buscarFilme(view: View) {
-        val omdb = Omdb(MainActivity())
+        val omdb = Omdb(mainActivity!!)
         omdb.getMovieById(edtIdFilme.text.toString())
     }
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
+        mainActivity = context as MainActivity
     }
 
 }
