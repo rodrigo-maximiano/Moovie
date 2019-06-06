@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Modo texto -->
     <item android:id="@+id/buscaIdMenuItem"
-        android:title="Buscar por IMDB ID"
+        android:title="@string/buscar_por_imdb_id"
         />
-    <!-- Modo gráfico -->
     <item android:id="@+id/buscaTituloMenuItem"
-        android:title="Buscar por Nome do Filme"
+        android:title="@string/buscar_por_titulo_do_filme"
         />
-    <!-- Sair -->
     <item android:id="@+id/sairMenuItem"
-        android:title="Sair"
+        android:title="@string/sair"
         android:icon="@drawable/icone_sair"
         />
 </menu>

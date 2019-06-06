@@ -15,4 +15,10 @@
     <string name="produtora">Produtora:</string>
     <string name="website">Website:</string>
     <string name="notas_de_avaliacao">Notas de avaliação</string>
+    <string name="consultar">Consultar</string>
+    <string name="informe_o_imdb_id_fo_filme">Informe o IMDB Id fo filme</string>
+    <string name="informe_o_titulo_do_filme">Informe o título do filme</string>
+    <string name="buscar_por_imdb_id">Buscar por IMDB ID</string>
+    <string name="buscar_por_titulo_do_filme">Buscar por Título do Filme</string>
+    <string name="sair">Sair</string>
 </resources>

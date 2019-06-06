@@ -23,7 +23,7 @@ class Omdb(val mainActivity: MainActivity) {
     val omdbApi: OmdbApi = retrofit.create(OmdbApi::class.java)
 
     fun getMovieById(id: String) {
-        omdbApi.getMovieById(id, Constantes.APP_KEY_VALUE).enqueue(
+        omdbApi.getMovieById(Constantes.APP_KEY_VALUE, id).enqueue(
             object : Callback<ResponseBody> {
                 // Função chamada no caso de erro
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -38,7 +38,7 @@ class Omdb(val mainActivity: MainActivity) {
     }
 
     fun getMovieByTitle(title: String) {
-        omdbApi.getMovieByTitle(title, Constantes.APP_KEY_VALUE).enqueue(
+        omdbApi.getMovieByTitle(Constantes.APP_KEY_VALUE, title).enqueue(
             object : Callback<ResponseBody> {
                 // Função chamada no caso de erro
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {

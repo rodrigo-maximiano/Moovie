@@ -6,18 +6,18 @@
     android:layout_height="match_parent">
 
     <EditText
-            android:id="@+id/edtTituloFilme"
+            android:id="@+id/edtIdFilme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:hint="@string/informe_o_titulo_do_filme"/>
+            android:hint="@string/informe_o_imdb_id_fo_filme"/>
 
     <Button
-            android:id="@+id/btnBuscarPorTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:onClick="buscarFilme"
-            android:text="@string/consultar"/>
+        android:id="@+id/btnBuscarPorId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="buscarFilme"
+        android:text="@string/consultar"/>
 
 </LinearLayout>

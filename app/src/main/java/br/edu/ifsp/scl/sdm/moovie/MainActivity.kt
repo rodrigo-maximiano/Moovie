@@ -19,6 +19,9 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Instancia o handler da thread de UI usado pelos Fragments
+        messageHandler = MessageHandler()
+
         setSupportActionBar(toolbar)
         supportActionBar?.title = resources.getString(R.string.app_name)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -56,8 +59,8 @@ class MainActivity: AppCompatActivity() {
         return retorno
     }
 
-    private fun substituiFragment(modo: String){
-        val modoBuscaFragment = if(modo == "id") BuscaTituloFragment() else BuscaIdFragment()
+    private fun substituiFragment(modo: String) {
+        val modoBuscaFragment = if(modo == "id") BuscaIdFragment() else BuscaTituloFragment()
 
         // Transaction para substituição de fragment
         val fragmentTransaction = supportFragmentManager.beginTransaction()

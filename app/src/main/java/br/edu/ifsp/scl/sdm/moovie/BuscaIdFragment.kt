@@ -1,13 +1,18 @@
 package br.edu.ifsp.scl.sdm.moovie
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.`fragment-buscar-id`.*
+import br.edu.ifsp.scl.sdm.tradutorsdmkt.retrofit.Omdb
+import kotlinx.android.synthetic.main.fragment_buscar_id.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-class BuscaIdFragment: ModoBuscaFragment(){
+class BuscaIdFragment: ModoBuscaFragment() {
+
+    val mainActivity: MainActivity = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val layoutFragment = inflater.inflate(R.layout.fragment_buscar_id, null)
         activity?.toolbar?.subtitle = "Busca por Id"
@@ -16,11 +21,16 @@ class BuscaIdFragment: ModoBuscaFragment(){
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        jogarDadoButton.setOnClickListener{ buscarFilme(it) }
+        btnBuscarPorId.setOnClickListener{ buscarFilme(it) }
     }
 
     override fun buscarFilme(view: View) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val omdb = Omdb(MainActivity())
+        omdb.getMovieById(edtIdFilme.text.toString())
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
     }
 
 }
