@@ -9,7 +9,7 @@ import java.io.Serializable
 
 data class OmdbResponse (
     val Title : String,
-    val Year : Int,
+    val Year : String,
     val Released : String,
     val Director : String,
     val Actors : String,

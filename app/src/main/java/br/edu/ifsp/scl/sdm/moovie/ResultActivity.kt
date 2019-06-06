@@ -1,8 +1,7 @@
 package br.edu.ifsp.scl.sdm.moovie
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
+import android.support.v7.app.AppCompatActivity
 import br.edu.ifsp.scl.sdm.moovie.model.OmdbResponse
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_result.*
@@ -19,7 +18,7 @@ class ResultActivity : AppCompatActivity() {
 
     private fun showMovieData(movie: OmdbResponse) {
         txvTitulo.text = movie.Title
-        txvAno.text = movie.Year.toString()
+        txvAno.text = movie.Year
         txvLancamento.text = movie.Released
         txvDiretor.text = movie.Director
         txvAtores.text = movie.Actors
