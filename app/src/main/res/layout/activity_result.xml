@@ -18,16 +18,10 @@
     <GridLayout
             android:id="@+id/glDadosFilme"
             android:layout_below="@id/imgPoster"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="2"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin">
-
-        <!--
-        título, ano, data de lançamento, diretor, atores, idioma, país,
-        notas de avaliação (fonte e valor), nota IMDb, tipo, produtora e website.
-        -->
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin">
 
         <TextView
                 android:layout_width="wrap_content"
@@ -36,9 +30,8 @@
 
         <TextView
                 android:id="@+id/txvTitulo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         <TextView
                 android:layout_width="wrap_content"

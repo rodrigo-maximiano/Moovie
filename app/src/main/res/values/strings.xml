@@ -2,7 +2,7 @@
     <string name="app_name">Moovie</string>
     <string name="menu_aberto">Menu aberto</string>
     <string name="menu_fechado">Menu fechado</string>
-    <string name="poster_do_filme">Poster do filme</string>
+    <string name="poster_do_filme">Pôster do filme</string>
     <string name="titulo">Título:</string>
     <string name="ano">Ano:</string>
     <string name="lancamento">Lançamento:</string>
@@ -16,7 +16,7 @@
     <string name="website">Website:</string>
     <string name="notas_de_avaliacao">Notas de avaliação</string>
     <string name="consultar">Consultar</string>
-    <string name="informe_o_imdb_id_fo_filme">Informe o IMDB Id fo filme</string>
+    <string name="informe_o_imdb_id_fo_filme">Informe o IMDB Id do filme</string>
     <string name="informe_o_titulo_do_filme">Informe o título do filme</string>
     <string name="buscar_por_imdb_id">Buscar por IMDB ID</string>
     <string name="buscar_por_titulo_do_filme">Buscar por Título do Filme</string>
